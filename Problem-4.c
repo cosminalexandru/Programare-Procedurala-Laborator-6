@@ -113,53 +113,53 @@ void adaugare(char *nume_fisier_binar, Student student) {
 
 }
 
-int main() {
-    int studentsNumber;
-    char studentsFile[] = "students.bin";
-    char studentsTextFile[] = "students.txt";
-    int optiune;
-    printf("Alegeti una din urmatoarele optiuni: 1.Creare catalog\n 2.Export studenti\n 3.Modificare nota\n 4.Adaugare");
-    scanf("%d", &optiune);
-    switch (optiune) {
-        case CREARE : {
-            printf("Introduceti numarul de studenti:");
-            scanf("%d", &studentsNumber);
-            creare(studentsFile, studentsNumber);
-            afisare(studentsFile, studentsTextFile);
-            break;
-        }
-        case AFISARE: {
-            afisare(studentsFile, studentsTextFile);
-            break;
-        }
-
-        case MODIFICARE: {
-            int id;
-            float nota;
-            printf("Introduceti id-ul:");
-            scanf("%d", &id);
-            printf("Introduceti nota:");
-            scanf("%f", &nota);
-            modificare(studentsFile, id, nota);
-            afisare(studentsFile, studentsTextFile);
-            break;
-        }
-        case ADAUGARE: {
-            Student student;
-            printf("Introduceti id-ul:");
-            scanf("%d", &student.id);
-            printf("Introduceti numele:");
-            scanf("%s", student.nume);
-            printf("Introduceti prenumele:");
-            scanf("%s", student.prenume);
-            printf("Introduceti nota:");
-            scanf("%f", &student.nota);
-            adaugare(studentsFile, student);
-            afisare(studentsFile, studentsTextFile);
-            break;
-        }
-        default:
-            afisare(studentsFile, studentsTextFile);
-    }
-    return 0;
-}
+//int main() {
+//    int studentsNumber;
+//    char studentsFile[] = "students.bin";
+//    char studentsTextFile[] = "students.txt";
+//    int optiune;
+//    printf("Alegeti una din urmatoarele optiuni: 1.Creare catalog\n 2.Export studenti\n 3.Modificare nota\n 4.Adaugare");
+//    scanf("%d", &optiune);
+//    switch (optiune) {
+//        case CREARE : {
+//            printf("Introduceti numarul de studenti:");
+//            scanf("%d", &studentsNumber);
+//            creare(studentsFile, studentsNumber);
+//            afisare(studentsFile, studentsTextFile);
+//            break;
+//        }
+//        case AFISARE: {
+//            afisare(studentsFile, studentsTextFile);
+//            break;
+//        }
+//
+//        case MODIFICARE: {
+//            int id;
+//            float nota;
+//            printf("Introduceti id-ul:");
+//            scanf("%d", &id);
+//            printf("Introduceti nota:");
+//            scanf("%f", &nota);
+//            modificare(studentsFile, id, nota);
+//            afisare(studentsFile, studentsTextFile);
+//            break;
+//        }
+//        case ADAUGARE: {
+//            Student student;
+//            printf("Introduceti id-ul:");
+//            scanf("%d", &student.id);
+//            printf("Introduceti numele:");
+//            scanf("%s", student.nume);
+//            printf("Introduceti prenumele:");
+//            scanf("%s", student.prenume);
+//            printf("Introduceti nota:");
+//            scanf("%f", &student.nota);
+//            adaugare(studentsFile, student);
+//            afisare(studentsFile, studentsTextFile);
+//            break;
+//        }
+//        default:
+//            afisare(studentsFile, studentsTextFile);
+//    }
+//    return 0;
+//}
