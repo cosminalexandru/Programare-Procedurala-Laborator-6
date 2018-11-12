@@ -2,55 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <time.h>
-
-/**
- *
- * @param textFileName - represent the name of a .txt file
- * @param binaryFileName - represent the name of a binary file
- */
-void text_to_binary(char *textFileName, char *binaryFileName) {
-    FILE *textFile, *binaryFile;
-    int number;
-
-    textFile = fopen(textFileName, "r");
-    if (textFile == NULL) {
-        printf("Fisier text este inexistent!");
-        exit(0);
-    }
-
-    binaryFile = fopen(binaryFileName, "wb");
-
-    while (fscanf(textFile, "%d", &number) == 1) {
-        fwrite(&number, sizeof(int), 1, binaryFile);
-    }
-    fclose(textFile);
-    fclose(binaryFile);
-}
-
-/**
- *
- * @param binaryFileName represent the name of a binary file
- * @param textFileName represent the name of a .txt file
- */
-
-void binary_to_text(char *binaryFileName, char *textFileName) {
-    FILE *textFile, *binaryFile;
-    int number;
-
-    binaryFile = fopen(binaryFileName, "rb");
-    if (binaryFile == NULL) {
-        printf("Fisierul binar este inexistent!");
-        exit(0);
-    }
-
-    textFile = fopen(textFileName, "w");
-
-    while (fread(&number, sizeof(int), 1, binaryFile) == 1)
-        fprintf(textFile, "%d ", number);
-    fclose(textFile);
-    fclose(binaryFile);
-}
-
+//#include "transformation-helper.h"
 /**
  *
  * @param binaryFileName represent the name of a binary file
@@ -134,12 +86,12 @@ void max_value(char *binaryFileName) {
     printf("Numarul de aparitii este: %d", index - 1);
 }
 
-int main() {
-    char binary_file_name[] = "binar.bin";
-    char text_file_name[] = "numere.txt";
-    create_binary_file(binary_file_name);
-    sort(binary_file_name);
-    binary_to_text(binary_file_name, text_file_name);
-    max_value(binary_file_name);
-    return 0;
-}
+//int main() {
+//    char binary_file_name[] = "binar.bin";
+//    char text_file_name[] = "numere.txt";
+//    create_binary_file(binary_file_name);
+//    sort(binary_file_name);
+//    binary_to_text(binary_file_name, text_file_name);
+//    max_value(binary_file_name);
+//    return 0;
+//}
