@@ -33,8 +33,9 @@ void split_file(char *textFileName) {
     binary_to_text("positives.bin", "positives.txt");
 }
 
-int main() {
-    char numbers[] = "..//numbers.txt";
-    split_file(numbers);
-}
+//int main() {
+//    char numbers[] = "..//numbers.txt";
+//    split_file(numbers);
+//    return 0;
+//}
 
